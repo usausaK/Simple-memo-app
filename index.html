@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Memo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ログイン前の画面 -->
+  <section id="login-screen" class="login-screen">
+    <div class="login-card">
+      <h1>My Memo</h1>
+
+      <p>
+        Googleアカウントでログインして、
+        メモを保存できます。
+      </p>
+
+      <button id="login-button" type="button">
+        Googleでログイン
+      </button>
+    </div>
+  </section>
+
+  <!-- ログイン後のメモ画面 -->
+  <div id="app-screen" class="app-screen hidden">
+
+    <!-- 左側：メモ一覧 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>My Memo</h1>
+
+        <button id="new-note-button" type="button">
+          ＋ 新規メモ
+        </button>
+      </div>
+
+      <div id="note-list" class="note-list">
+        <!-- JavaScriptでメモ一覧を表示します -->
+      </div>
+
+      <div class="sidebar-footer">
+        <span id="user-name"></span>
+
+        <button id="logout-button" type="button">
+          ログアウト
+        </button>
+      </div>
+    </aside>
+
+    <!-- 右側：メモ編集画面 -->
+    <main class="editor">
+      <div id="empty-message" class="empty-message">
+        左側からメモを選択するか、
+        新しいメモを作成してください。
+      </div>
+
+      <div id="note-editor" class="note-editor hidden">
+        <div class="editor-header">
+          <input
+            id="note-title"
+            type="text"
+            placeholder="タイトル"
+            maxlength="100"
+          >
+
+          <button id="delete-note-button" type="button">
+            削除
+          </button>
+        </div>
+
+        <textarea
+          id="note-content"
+          placeholder="メモを入力してください"
+        ></textarea>
+
+        <div class="save-status">
+          <span id="save-status">保存済み</span>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
